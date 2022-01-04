@@ -13,7 +13,7 @@ dotenv.config();
 const PORT = process.env.PORT || 1505;
 mongoose.Promise = global.Promise;
 
-app.engine('hbs', engine({extname:'.hbs'}));
+app.engine('.hbs', engine({extname:'.hbs'}));
 app.set('view engine', '.hbs');
 app.set('views', path.join(__dirname, '\\views'));
 
