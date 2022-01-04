@@ -13,7 +13,9 @@ class Upload {
         })
 
     }
-
+    changedes(req,res,next){
+        res.redirect('/upload');
+    }
     async upload(req, res, next) {
         if (req.body.owned_gallery == 0) {
             Img.find({ gallery: req.body.gallery }, async function (err, val) {
