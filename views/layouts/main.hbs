@@ -13,12 +13,14 @@
             width: 100%;
             background-image: url(https://res.cloudinary.com/vitamim/image/upload/v1641284425/source/Tesselation-Transition_krt5wf.gif);
             background-position: center;
-            background-repeat:repeat-y;
+            background-repeat: repeat-y;
             background-size: cover;
         }
-        .logo{
+
+        .logo {
             text-decoration: none;
         }
+
         .input {
             display: flex;
             align-items: center;
@@ -54,7 +56,8 @@
             cursor: pointer;
             border: #fff 1px solid;
         }
-        .img-overlay{
+
+        .img-overlay {
             background-color: white;
             padding: 5px 5px;
             border-radius: 0.25rem;
@@ -62,6 +65,7 @@
             display: flex;
             flex-direction: column;
         }
+
         .img:hover {
             box-shadow: #ffffff 4px 4px 4px 2px;
         }
@@ -69,26 +73,30 @@
         .border {
             border: #fff 1px solid;
         }
-        .border-btn{
+
+        .border-btn {
             background-color: white;
             border-radius: .25rem;
             border: white 1px solid;
         }
-        .btn{
+
+        .btn {
             width: fit-content;
             height: fit-content;
         }
+
         .collection {
             padding: 10px 5px;
             border-radius: 5px;
             box-shadow: #ffffff 1px 1px 4px 1px;
+            display: flex;
         }
 
         .background {
             width: 82%;
             margin-left: 9%;
             background-color: rgba(255, 255, 255, 0.226);
-            
+
         }
 
         label {
@@ -106,8 +114,21 @@
             box-shadow: #ffffffb0 0px 0px 6px 1px;
             border: #fff 1px solid;
         }
-        .hide{
+
+        .hide {
             display: none;
+        }
+        @media all and (max-width: 480px) {
+            .img{
+                width: 95%;
+                height: auto;
+            }
+            .collection{
+                justify-content: center;
+            }
+            .img-overlay{
+                margin-right: 0px;
+            }
         }
     </style>
 </head>
@@ -116,7 +137,10 @@
     <div class="header">
         <nav class="navbar navbar-light fixed-top collection" style="background-color: #ffffff00;">
             <div class="container-fluid">
-                <a class="logo" href="/upload"><h2 style="color: white;font-family: 'comfotaa';font-weight: 700;margin-bottom: 0px;">My portfolio</h2></a>
+                <a class="logo" href="/upload">
+                    <h2 style="color: white;font-family: 'comfotaa';font-weight: 700;margin-bottom: 0px;">My portfolio
+                    </h2>
+                </a>
                 <button style="background-color: #ffffff; border-color:rgba(255,255,255,1) !important;"
                     class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                     aria-controls="offcanvasNavbar">
@@ -214,13 +238,14 @@
     }
 </script>
 <script>
-    document.getElementById("btnradio1").onclick = function(){
+    document.getElementById("btnradio1").onclick = function () {
         document.getElementsByClassName("new-col")[0].style.display = 'block';
         document.getElementsByClassName("owned-col")[0].style.display = 'none';
     }
-    document.getElementById("btnradio2").onclick = function(){
+    document.getElementById("btnradio2").onclick = function () {
         document.getElementsByClassName("new-col")[0].style.display = 'none';
         document.getElementsByClassName("owned-col")[0].style.display = 'block';
     }
 </script>
+
 </html>

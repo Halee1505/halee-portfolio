@@ -1,8 +1,8 @@
-<div>
+<div style="width:100%">
     {{#each img}}
     {{#if this.key}}
     <div class="ms-5 me-5 mb-5">
-        <div class="row">
+        <div class="row" style="display: flex;flex-direction:column">
             <form action="/del-collection" method="post">
                 <input type="text" name="collection" value="{{this.gallery}}" class="hide">
                 <div style="display: flex; align-items:center">
@@ -11,11 +11,11 @@
                             class="btn btn-outline-success btn btn-sm">Xóa</button></div>
                 </div>
             </form>
-            <div class="row row-cols-auto collection">
+            <div class="row row-cols-auto collection" style="align-self: center;">
                 {{#each path}}
-                <form action="del-img" method="post"  style="padding-right:0px !important;padding-left:0px !important">
+                <form action="del-img" method="post"  style="padding-right:0px !important;padding-left:0px !important;">
                     <div class="img-overlay">
-                        <a href="{{this}}" class="col  mt-2">
+                        <a href="{{this}}" class="col  mt-2" style=" display:flex; justify-content:center">
                             <img src="{{this}}" class="img" alt="{{this}}">
                             <input type="text" name="img" value="{{this}}" class="hide">
                         </a>
