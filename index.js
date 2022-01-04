@@ -15,7 +15,7 @@ mongoose.Promise = global.Promise;
 
 app.engine('.hbs', engine({extname:'.hbs'}));
 app.set('view engine', '.hbs');
-app.set('views', path.join(__dirname, '\\views'));
+app.set('views','./views');
 
 const connectDB = async () => {
   const conn = await mongoose.connect(process.env.DB, { useUnifiedTopology: true, useNewUrlParser: true, })
