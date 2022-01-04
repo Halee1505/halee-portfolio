@@ -18,7 +18,7 @@ app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, '\\views'));
 
 const connectDB = async () => {
-  const conn = await mongoose.connect(config.DB, { useUnifiedTopology: true, useNewUrlParser: true, })
+  const conn = await mongoose.connect(process.env.DB, { useUnifiedTopology: true, useNewUrlParser: true, })
     .then(() => { console.log('Database is connected') },
       err => { console.log('Can not connect to the database' + err) }
     );
