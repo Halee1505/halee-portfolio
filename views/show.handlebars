@@ -1,0 +1,31 @@
+<div>
+    {{#each img}}
+    {{#if this.key}}
+    <div class="ms-5 me-5 mb-5">
+        <div class="row">
+            <form action="/del-collection" method="post">
+                <input type="text" name="collection" value="{{this.gallery}}" class="hide">
+                <div style="display: flex; align-items:center">
+                    <h3>{{this.gallery}}</h3>
+                    <div class="border-btn"><button type="submit"
+                            class="btn btn-outline-success btn btn-sm">Xóa</button></div>
+                </div>
+            </form>
+            <div class="row row-cols-auto collection">
+                {{#each path}}
+                <form action="del-img" method="post"  style="padding-right:0px !important;padding-left:0px !important">
+                    <div class="img-overlay">
+                        <a href="{{this}}" class="col  mt-2">
+                            <img src="{{this}}" class="img" alt="{{this}}">
+                            <input type="text" name="img" value="{{this}}" class="hide">
+                        </a>
+                        <button type="submit" class="btn btn-outline-success btn btn-sm">Xóa</button>
+                    </div>
+                </form>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    {{/if}}
+    {{/each}}
+</div>

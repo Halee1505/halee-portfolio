@@ -1,0 +1,55 @@
+<div class="container border">
+    <div class="row align-items-center"
+        style=" margin-bottom:20px; margin-top:20px; display:flex; justify-content:center">
+        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" name="options-outlined" id="btnradio1" autocomplete="off" checked>
+            <label class="btn btn-outline-light" for="btnradio1">Tên bộ ảnh mới</label>
+
+            <input type="radio" class="btn-check" name="options-outlined" id="btnradio2" autocomplete="off">
+            <label class="btn btn-outline-light" for="btnradio2">Chọn bộ ảnh hiện có</label>
+        </div>
+        <div class="col-12" style="visibility: hidden;">
+            <p>1</p>
+        </div>
+        <div class="ms-5 me-5" style="width: fit-content;">
+            <form class="row g-0" style="width:fit-content" method="post" enctype="multipart/form-data"
+                onsubmit="return checkSubmit()">
+
+                <div class="col-12 mt-4 new-col">
+                    <input class="form-control" type="text" name="gallery" id="collection_name"
+                        placeholder="Tên bộ ảnh mới" multiple onchange="change()">
+                </div>
+
+                <div class="col-12 mt-4 owned-col hide">
+                    <select class="form-select" aria-label="Default select example" id="my_gallery" name="owned_gallery"
+                        onchange="change()">
+                        <option selected value="0">chọn bộ sưu tập ảnh</option>
+                        {{#each img}}
+                        <option value="{{this.gallery}}">{{this.gallery}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+
+                <div class="col-12">
+                    <p id="err1">Chưa đặt tên bộ sưu tập</p>
+                </div>
+
+                <div class="col-12">
+                    <label for="inputFile" class="form-label">Chọn ảnh</label>
+                    <input accept=".jpg, .png" class="form-control" type="file" name="path" id="inputFile" multiple>
+                </div>
+
+                <div class="col-12">
+                    <p id="err2">Chưa có ảnh nào được chọn</p>
+                </div>
+
+                <div class="col-12">
+                    <button style="color:#ffffff; border-color:rgba(255,255,255,1) !important;"
+                        class="btn btn-outline-success" id="btn" type="submit">Submit</button>
+                </div>
+
+            </form>
+            <div id="previews"></div>
+        </div>
+    </div>
+</div>
