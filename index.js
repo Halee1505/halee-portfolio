@@ -10,7 +10,7 @@ const config = require('./config/db');
 const UploadImg = require('./routes/index');
 
 dotenv.config();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 1505;
 mongoose.Promise = global.Promise;
 
 app.engine('handlebars', engine());

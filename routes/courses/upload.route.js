@@ -25,7 +25,7 @@ const upload = multer({ storage: storage })
 
 
 router.get('/upload',uploadController.index);
-router.get('/upload',uploadController.changedes);
+router.get('/',uploadController.changedes);
 router.post('/upload',upload.any(),uploadController.upload);
 router.post('/del-img',uploadController.delImg);
 router.post('/del-collection',uploadController.delCollection);
