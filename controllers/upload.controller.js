@@ -6,7 +6,7 @@ class Upload {
     index(req, res, next) {
         Img.find({}, async function (err, img) {
             img = img.map(i => i.toObject())
-            if (!err) await res.render('upload', { img });
+            if (!err) await res.json("Halee");
             else {
                 res.json("error")
             }
