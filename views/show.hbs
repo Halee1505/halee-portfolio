@@ -1,14 +1,15 @@
 <div style="width:100%">
     {{#each img}}
     {{#if this.key}}
-    <div class="ms-5 me-5 mb-5">
+    <div class="laptop">
+            <div class="ms-5 me-5 mb-5">
         <div class="row" style="display: flex;flex-direction:column">
             <form action="/del-collection" method="post">
                 <input type="text" name="collection" value="{{this.gallery}}" class="hide">
                 <div style="display: flex; align-items:center">
                     <h3>{{this.gallery}}</h3>
-                    <div class="border-btn"><button type="submit"
-                            class="btn btn-outline-success btn btn-sm">Xóa</button></div>
+                    <button type="submit"
+                            class="btn btn-outline-light btn btn-sm">Xóa</button>
                 </div>
             </form>
             <div class="row row-cols-auto collection" style="align-self: center;">
@@ -25,6 +26,34 @@
                 {{/each}}
             </div>
         </div>
+    </div>
+    </div>
+    <div class="mobile">
+            <div class="ms-5 me-5 mb-5">
+        <div class="row" style="display: flex;flex-direction:column">
+            <form action="/del-collection" method="post">
+                <input type="text" name="collection" value="{{this.gallery}}" class="hide">
+                <div style="display: flex; align-items:center">
+                    <h3>{{this.gallery}}</h3>
+                    <button type="submit"
+                            class="btn btn-outline-light btn btn-sm">Xóa</button>
+                </div>
+            </form>
+            <div class="row row-cols-auto collection" style="align-self: center;">
+                {{#each path}}
+                <form action="del-img" method="post"  style="padding-right:0px !important;padding-left:0px !important;">
+                    <div class="img-overlay">
+                        <a href="{{this}}" class="col  mt-2" style=" display:flex; justify-content:center">
+                            <img src="{{this}}" class="img" alt="{{this}}">
+                            <input type="text" name="img" value="{{this}}" class="hide">
+                        </a>
+                        <button type="submit" class="btn btn-outline-success btn btn-sm">Xóa</button>
+                    </div>
+                </form>
+                {{/each}}
+            </div>
+        </div>
+    </div>
     </div>
     {{/if}}
     {{/each}}

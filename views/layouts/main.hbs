@@ -113,21 +113,42 @@
             font-weight: bolder;
             box-shadow: #ffffffb0 0px 0px 6px 1px;
             border: #fff 1px solid;
+            margin-bottom: 0px;
+            margin-right: 5px;
         }
 
         .hide {
             display: none;
         }
+
+        .laptop {
+            display: block;
+        }
+
+        .mobile {
+            display: none;
+        }
+
         @media all and (max-width: 480px) {
-            .img{
+            .img {
                 width: 95%;
                 height: auto;
             }
-            .collection{
+
+            .collection {
                 justify-content: center;
             }
-            .img-overlay{
+
+            .img-overlay {
                 margin-right: 0px;
+            }
+
+            .laptop {
+                display: none;
+            }
+
+            .mobile {
+                display: block;
             }
         }
     </style>
