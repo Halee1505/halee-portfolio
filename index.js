@@ -3,12 +3,14 @@ const path = require('path');
 const app = express();
 const bodyParser = require('body-parser');
 const { engine } = require( 'express-handlebars');
-const PORT = process.env.PORT;
+const dotenv = require("dotenv");
 const cors = require('cors');
 const mongoose = require('mongoose');
 const config = require('./config/db');
 const UploadImg = require('./routes/index');
 
+dotenv.config();
+const PORT = process.env.PORT;
 mongoose.Promise = global.Promise;
 
 app.engine('handlebars', engine());
