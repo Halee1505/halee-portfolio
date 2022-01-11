@@ -6,9 +6,14 @@ const { engine } = require( 'express-handlebars');
 const dotenv = require("dotenv");
 const cors = require('cors');
 const mongoose = require('mongoose');
-const config = require('./config/db');
 const UploadImg = require('./routes/index');
+const cloudinary = require('cloudinary').v2;
 
+cloudinary.config({
+  cloud_name: "vitamim",
+  api_key: "562993249483824",
+  api_secret: "uo6dYnuiMvn-gOspPxvzA__28qo"
+});
 dotenv.config();
 const PORT = process.env.PORT || 1505;
 mongoose.Promise = global.Promise;
