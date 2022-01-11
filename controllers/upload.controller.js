@@ -9,7 +9,7 @@ function NewImgCollection(req, img) {
         let k = 0;
         for (let i = 0; i < req.files.length; i++) {
             const UploadImg = async () => {
-                await sharp(req.files[i].path).resize(800).toFile('./uploads/' + req.files[i].filename)
+                await sharp(req.files[i].path).resize(700).toFile('./uploads/' + req.files[i].filename)
                 await cloudinary.uploader.upload('./uploads/' + req.files[i].filename)
                     .then((result) => {
                         img.path.push(result.url)
