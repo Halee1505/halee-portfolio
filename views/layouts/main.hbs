@@ -16,13 +16,15 @@
             background-repeat: repeat-y;
             background-size: cover;
         }
-        .header{
+
+        .header {
             width: 100%;
             background-image: url(https://res.cloudinary.com/vitamim/image/upload/v1641284425/source/Tesselation-Transition_krt5wf.gif);
             background-position: center;
             background-repeat: repeat-y;
             background-size: cover;
         }
+
         .logo {
             text-decoration: none;
         }
@@ -124,6 +126,27 @@
             margin-right: 5px;
         }
 
+        .loader {
+            border: 8px solid #f3f3f3;
+            /* Light grey */
+            border-top: 8px solid #000000;
+            /* Blue */
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
         .hide {
             display: none;
         }
@@ -158,13 +181,14 @@
                 display: block;
             }
         }
+
         @media (min-width: 480px) and (max-width: 860px) {
 
             .img {
                 width: auto;
                 height: 190px;
             }
-            
+
 
             .collection {
                 justify-content: space-around;
@@ -174,7 +198,6 @@
                 margin-right: 0px;
             }
         }
-        
     </style>
 </head>
 
@@ -278,6 +301,7 @@
             return false;
         }
         else {
+            document.getElementById("loading").style.display = "flex";
             return true;
         }
     }
@@ -292,4 +316,5 @@
         document.getElementsByClassName("owned-col")[0].style.display = 'block';
     }
 </script>
+
 </html>

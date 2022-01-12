@@ -36,7 +36,8 @@
 
                 <div class="col-12">
                     <label for="inputFile" class="form-label">Chọn ảnh</label>
-                    <input accept=".jpg, .png" class="form-control" type="file" name="path" id="inputFile" onchange="previewFiles()" multiple>
+                    <input accept=".jpg, .png" class="form-control" type="file" name="path" id="inputFile"
+                        onchange="previewFiles()" multiple>
                 </div>
 
                 <div class="col-12">
@@ -49,6 +50,7 @@
                 </div>
 
             </form>
+            <div id="loading" style="display: none; justify-content:center;"><div class="loader"></div></div>
             <div id="previews"></div>
         </div>
     </div>
