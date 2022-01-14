@@ -30,5 +30,6 @@ router.post('/upload',upload.any(),uploadController.upload);
 router.post('/del-img',uploadController.delImg);
 router.post('/del-collection',uploadController.delCollection);
 router.get('/show',showImgController.index);
+router.get('/loadImg',showImgController.loadImg);
 
 module.exports = router;

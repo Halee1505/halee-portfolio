@@ -19,6 +19,15 @@ class ShowImg{
             }
         })
     }
+    loadImg(req,res,next){
+        Img.find({},function(err,key){
+            key = key.map(i=>i.toObject())
+            if(!err) res.send(key);
+            else{
+                res.json("error")
+            }
+        })
+    }
 
 }
 module.exports = new ShowImg;
